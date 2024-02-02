@@ -5,8 +5,8 @@ const Layout = require('../Layout');
 module.exports = function Login() {
   return (
     <Layout>
-      <script defer src="/js/reg.js" />
-      <div className="regPage">
+      
+      <div className="registerPage">
         <form action="/register" method="POST" id="regForm" className="formContainer">
           <input
             name="login"
@@ -20,20 +20,22 @@ module.exports = function Login() {
             type="text"
             className="emailInput"
             id="emailInput"
-            placeholder="Email Address"
+            placeholder="Email"
           />
           <input
             name="password"
             type="password"
             className="passwordInput"
             id="passwordInput"
-            placeholder="Enter your password"
+            placeholder="Password"
           />
           <button type="submit">
             Зарегистрироваться
           </button>
         </form>
+        <div id="message"></div>
       </div>
+      <script defer src="/js/registrationFetch.js" />
     </Layout>
   );
 };

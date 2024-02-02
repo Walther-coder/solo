@@ -18,8 +18,8 @@ const app = express();
 dbConnectionCheck();
 
 const indexRoutes = require('./routes/indexRoutes');
-// const loginRoutes = require('./routes/loginRoutes');
-// const regRoutes = require('./routes/regRoutes');
+const regRouter = require('./routes/registratrtionRoute');
+const logRoutes = require('./routes/loginRouter');
 // const teaRoutes = require('./routes/teaRoutes');
 
 // * Конфиг для куки в виде файла сессий
@@ -44,8 +44,8 @@ app.use(express.static(path.join(process.cwd(), 'public')));
 app.use(session(sessionConfig));
 
 // app.use('/tea', teaRoutes);
-// app.use('/login', secureRoute, loginRoutes);
-// app.use('/register', secureRoute, regRoutes);
+app.use('/login', logRoutes);
+app.use('/register', regRouter);
 app.use('/', indexRoutes);
 
 app.listen(PORT ?? 3100, () => {

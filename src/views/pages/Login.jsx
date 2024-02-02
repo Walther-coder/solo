@@ -5,7 +5,7 @@ const Layout = require('../Layout');
 module.exports = function Login() {
   return (
     <Layout>
-      <script defer src="/js/login.js" />
+      {/* <script defer src="/js/login.js" /> */}
       <div className="loginPage">
         <form action="/login" method="POST" id="loginForm" className="formContainer">
           <input
@@ -13,14 +13,14 @@ module.exports = function Login() {
             type="text"
             className="loginInput"
             id="loginInput"
-            placeholder="Email Address"
+            placeholder="Email"
           />
           <input
             name="password"
             type="password"
             className="passwordInput"
             id="passwordInput"
-            placeholder="Enter your password"
+            placeholder="Password"
           />
           <button type="submit">
             Войти

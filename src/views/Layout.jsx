@@ -7,7 +7,7 @@ module.exports = function Layout({ children, login }) {
         <meta charSet="UTF-8" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link
+        {/* <link
           type="image/x-icon"
           href="/assets/favicon.ico"
           rel="shortcut icon"
@@ -17,27 +17,27 @@ module.exports = function Layout({ children, login }) {
           rel="preconnect"
           href="https://fonts.gstatic.com"
           crossOrigin="anonymous"
-        />
+        /> */}
         <link rel="stylesheet" href="/css/style.css" />
-        <title>Exam</title>
+        <title>Solo prodgect</title>
       </head>
       <body>
         <nav className="navbar">
           <div className="navbarContainer">
             <div className="navbarMenu" id="navbarMenu">
               <a className="home" href="/">
-                Home
+              На исходную
               </a>
             </div>
           </div>
 
-          {/* {login ? (
+          {login ? (
             <div className="userMenu">
               <a className="home" href="/tea/ceremony">
-                Add smth
+                Личный кабинет
               </a>
               <a className="home" href="/shop">
-                List of Smth
+                ВКонтактовские цитаты
               </a>
               <div>
                 <a href="/account">
@@ -46,27 +46,27 @@ module.exports = function Layout({ children, login }) {
                 </a>
               </div>
               <div>
-                <a href="/logout">Logout</a>
+                <a href="/logout">Выйти</a>
               </div>
             </div>
           ) : (
             <>
               <div className="nav-item">
                 <a className="nav-link" href="/login">
-                  Sign In
+                  За логиниться
                 </a>
               </div>
               <div className="nav-item">
                 <a className="nav-link" href="/register">
-                  Sign Up
+                  За регатца
                 </a>
               </div>
             </>
-          )} */}
+          )}
 
         </nav>
         {children}
-        <script defer src="/js/index.js" />
+        {/* <script defer src="/js/index.js" /> */}
       </body>
     </html>
   );
