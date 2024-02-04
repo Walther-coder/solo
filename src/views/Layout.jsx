@@ -34,7 +34,7 @@ module.exports = function Layout({ children, login }) {
           {login ? (
             <div className="userMenu">
               <a className="home" href="/tea/ceremony">
-                Личный кабинет
+                Избранное
               </a>
               <a className="home" href="/shop">
                 ВКонтактовские цитаты

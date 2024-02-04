@@ -1,4 +1,4 @@
-const regRouter = require('express').Router();
+const regRoutes = require('express').Router();
 const bcrypt = require('bcrypt');
 
 const renderTemplate = require('../lib/renderTemplate');
@@ -6,11 +6,11 @@ const Register = require('../views/pages/Register');
 
 const { User } = require('../../db/models');
 
-regRouter.get('/', (req, res) => {
+regRoutes.get('/', (req, res) => {
     renderTemplate(Register, null, res);
   });
 
-  regRouter.post('/', async (req, res) => {
+  regRoutes.post('/', async (req, res) => {
     const { login, email, password } = req.body;
     try {
       const user = await User.findOne({ where: { login } });
@@ -34,4 +34,4 @@ regRouter.get('/', (req, res) => {
     }
   })
 
-  module.exports = regRouter;
+  module.exports = regRoutes;

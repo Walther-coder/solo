@@ -18,9 +18,9 @@ const app = express();
 dbConnectionCheck();
 
 const indexRoutes = require('./routes/indexRoutes');
-const regRouter = require('./routes/registratrtionRoute');
-const logRoutes = require('./routes/loginRouter');
-// const teaRoutes = require('./routes/teaRoutes');
+const regRoutes = require('./routes/registratrtionRoutes');
+const logRoutes = require('./routes/loginRoutes');
+const quotesRouter = require('./routes/quotesRoutes');
 
 // * Конфиг для куки в виде файла сессий
 const sessionConfig = {
@@ -40,13 +40,13 @@ app.use(morgan('dev'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static(path.join(process.cwd(), 'public')));
-// * Подключи сессии как мидлу
+// * Подключи сессии как мидл
 app.use(session(sessionConfig));
 
-// app.use('/tea', teaRoutes);
-app.use('/login', logRoutes);
-app.use('/register', regRouter);
-app.use('/', indexRoutes);
+app.use('/quote', quotesRouter);
+app.use('/login', secureRoute, logRoutes);
+app.use('/register', secureRoute, regRoutes);
+app.use('/', checkUser, indexRoutes);
 
 app.listen(PORT ?? 3100, () => {
   console.log('Сервер запущен!');

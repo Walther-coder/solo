@@ -1,43 +1,42 @@
-const regForm = document.querySelector('#regForm');
+const loginForm = document.querySelector('#loginForm');
 const messageDiv = document.querySelector('#message');
 
-regForm.addEventListener('submit', async (event) => {
+loginForm.addEventListener('submit', async (event) => {
     event.preventDefault();
-    
-    const data = new FormData(regForm);
-    const inputs = Object.fromEntries(data);
-    console.log(inputs)
 
-    if(!inputs.login || !inputs.email || !inputs.password) {
-        messageDiv.innerText = 'Заполните все поля';
+    const data = new FormData(loginForm);
+    const inputs = Object.fromEntries(data);
+
+    if(!inputs.login || !inputs.password) {
+        messageDiv.innerText = 'Введите все данные';
         messageDiv.style.color = 'red';
     } else {
         try {
-            const response = await fetch('/register', {
+            const response = await fetch('/login', {
                 method: 'POST',
                 headers: {
                     'Content-type': 'application/json',
                 },
                 body: JSON.stringify(inputs),
             });
+
             const result = await response.json();
-           
+
             messageDiv.style.color = 'black';
 
             if(result.msg) {
                 messageDiv.innerText = result.msg;
                 messageDiv.style.color = 'green';
                 setTimeout(() => {
-                    // eslint-disable-next-line no-undef
                     window.location.href = '/';
                 }, 1000);
             }
-            if (result.err) {
+            if(result.err) {
                 messageDiv.innerText = result.err;
                 messageDiv.style.color = 'red';
-              }
+            }
         } catch (error) {
-            console.log(error, 'ОШИБКА В ФИЧЕ РЕГИСТРАЦИИ')
+            console.log(error, 'ОШИБКА В ФИЧЕ ЛОГИНА')
         }
     }
 })

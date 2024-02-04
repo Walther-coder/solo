@@ -2,7 +2,7 @@
    if (req.session.login) {
      next();
   } else {
-     res.redirect('/log');
+     res.redirect('/login');
   }
  };
 
@@ -10,7 +10,7 @@ const secureRoute = (req, res, next) => {
    if (!req.session.login) {
      next();
    } else {
-    res.redirect('/main');
+    res.redirect('/error');
    }
  };
 

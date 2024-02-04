@@ -5,7 +5,7 @@ const Layout = require('../Layout');
 module.exports = function Login() {
   return (
     <Layout>
-      {/* <script defer src="/js/login.js" /> */}
+      <script defer src="/js/loginFetch.js" />
       <div className="loginPage">
         <form action="/login" method="POST" id="loginForm" className="formContainer">
           <input
@@ -13,7 +13,7 @@ module.exports = function Login() {
             type="text"
             className="loginInput"
             id="loginInput"
-            placeholder="Email"
+            placeholder="Login"
           />
           <input
             name="password"
@@ -26,6 +26,7 @@ module.exports = function Login() {
             Войти
           </button>
         </form>
+        <div id="message"></div>
       </div>
     </Layout>
   );
