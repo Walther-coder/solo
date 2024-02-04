@@ -6,7 +6,7 @@ module.exports = function Favorites({login, quote}) {
         <Layout login={login}>
         <script defer src="/js/favoritesFetch.js" />
         <div className="containerCreate">
-          <form id="form1" className="createQuote">
+          <form id="formCreate" className="createQuote">
             <h1 className="create">Написать свою цитату</h1>
             <label htmlFor="quote">
               Body:

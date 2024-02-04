@@ -33,7 +33,7 @@ module.exports = function Layout({ children, login }) {
 
           {login ? (
             <div className="userMenu">
-              <a className="home" href="/tea/ceremony">
+              <a className="home" href="/quote/favorites">
                 Избранное
               </a>
               <a className="home" href="/shop">
