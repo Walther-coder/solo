@@ -27,4 +27,32 @@ qootesRoutes.post('/favorites', async (req, res) => {
     }
 })
 
+qootesRoutes.delete('/favorites/:id', async (req, res) => {
+    const { id } = req.params;
+    try {
+        await Quote.destroy({ where: { id } });
+        const newQuotesAll = await Quote.findAll();
+        const result = newQuotesAll.map((el) => el.get({ plain: true }));
+        res.json(result)
+    } catch (error) {
+        console.log(error, 'ОШИБКА v РУЧКЕ УДАЛЕНИЯ');
+        res.status(400)
+    }
+})
+
+qootesRoutes.put('/favorites/:id', async (req, res) => {
+    const { id } = req.params;
+    const { quote: body } = req.body;
+    try {
+        const quryQuote = await Quote.findOne({ where: { id } });
+    
+        quryQuote.body = body;
+        await quryQuote.save();
+        res.json(quryQuote);
+    } catch (error) {
+        console.log(error, 'ОШИБКА В РУЧКЕ РЕДАКТИРОВАНИЯ');
+        res.status(500);
+    }
+})
+
 module.exports = qootesRoutes;
