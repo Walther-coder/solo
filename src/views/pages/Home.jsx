@@ -4,7 +4,7 @@ const Layout = require('../Layout');
 module.exports = function Home({ login }) {
   return (
     <Layout login={login}>
-      <a href="/shop">
+      <a href="/quotesApi">
         <button type="submit">Начнем</button>
       </a>
     </Layout>

@@ -18,7 +18,7 @@ module.exports = function Layout({ children, login }) {
           href="https://fonts.gstatic.com"
           crossOrigin="anonymous"
         /> */}
-        <link rel="stylesheet" href="/css/style.css" />
+        {/* <link rel="stylesheet" href="/css/style.css" /> */}
         <title>Solo prodgect</title>
       </head>
       <body>
@@ -36,7 +36,7 @@ module.exports = function Layout({ children, login }) {
               <a className="home" href="/quote/favorites">
                 Избранное
               </a>
-              <a className="home" href="/shop">
+              <a className="home" href="/quotesApi">
                 ВКонтактовские цитаты
               </a>
               <div>

@@ -1,19 +1,17 @@
-const qootesRoutes = require('express').Router();
+const quotesRoutes = require('express').Router();
 
 const { Quote } = require('../../db/models');
-const favorites = require('../views/pages/Favorites');
-
-const renderTemplate = require('../lib/renderTemplate');
 const Favorites = require('../views/pages/Favorites');
+const renderTemplate = require('../lib/renderTemplate');
 
-qootesRoutes.get('/favorites', async (req, res) => {
-    const { login } = req.session;
-    const quotes = await Quote.findAll({ raw: true });
+quotesRoutes.get('/favorites', async (req, res) => {
+    const { login, userId } = req.session;
+    const quotes = await Quote.findAll({ where: { user_id: userId }, raw: true });
     console.log('=====>', quotes)
-    renderTemplate(favorites, { login, quote: quotes }, res);
+    renderTemplate(Favorites, { login, quote: quotes }, res);
 });
 
-qootesRoutes.post('/favorites', async (req, res) => {
+quotesRoutes.post('/favorites', async (req, res) => {
     const { quote: body } = req.body;
     const { userId } = req.session;
     console.log('====>', body, userId)
@@ -27,11 +25,12 @@ qootesRoutes.post('/favorites', async (req, res) => {
     }
 })
 
-qootesRoutes.delete('/favorites/:id', async (req, res) => {
+quotesRoutes.delete('/favorites/:id', async (req, res) => {
     const { id } = req.params;
+    const { userId } = req.session;
     try {
         await Quote.destroy({ where: { id } });
-        const newQuotesAll = await Quote.findAll();
+        const newQuotesAll = await Quote.findAll({ where: { user_id: userId } });
         const result = newQuotesAll.map((el) => el.get({ plain: true }));
         res.json(result)
     } catch (error) {
@@ -40,9 +39,10 @@ qootesRoutes.delete('/favorites/:id', async (req, res) => {
     }
 })
 
-qootesRoutes.put('/favorites/:id', async (req, res) => {
+quotesRoutes.put('/favorites/:id', async (req, res) => {
     const { id } = req.params;
     const { quote: body } = req.body;
+    console.log('===>', body, id)
     try {
         const quryQuote = await Quote.findOne({ where: { id } });
     
@@ -55,4 +55,4 @@ qootesRoutes.put('/favorites/:id', async (req, res) => {
     }
 })
 
-module.exports = qootesRoutes;
+module.exports = quotesRoutes;

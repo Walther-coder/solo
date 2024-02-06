@@ -21,8 +21,8 @@ module.exports = function Favorites({login, quote}) {
               <input type="text" id="quoteEdit" name="quoteEdit" />
             </label>
             <div className="button">
-              <button type="submit" className="editCeremony">Сохранить</button>
-              <button type="submit" className="cancel">Cancel</button>
+              <button type="submit" className="editQuote">Сохранить</button>
+              <button type="submit" className="cancel">Назад</button>
             </div>
           </form>
   
@@ -30,8 +30,8 @@ module.exports = function Favorites({login, quote}) {
             {quote.map((card) => (
               <div key={card.id} id={`quote${card.id}`} className="quoteCard">
                 <h3 className="cardValue">{card.body}</h3>
-                <button className="buttonDelete" id={card.id} type="submit">Delete</button>
-                <button className="editButton" id={card.id} type="submit">Edit</button>
+                <button className="buttonDelete" id={card.id} type="submit">Удалить</button>
+                <button className="editButton" id={card.id} type="submit">Изменить</button>
               </div>
             ))}
           </div>
