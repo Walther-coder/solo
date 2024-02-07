@@ -6,26 +6,29 @@ module.exports = function Account({login, user}) {
         <Layout login={login}>
            <script defer src="/js/accountFetch.js" />
 
-           <form className="formEditLogin" style={{ display: 'none' }}>
+            <div className='account'>
+              <h2>Личный кабинет</h2>
+           <form className="dataformEdit" style={{ display: 'none' }}>
             <h1>Изменить</h1>
             <label htmlFor="editData">
               <input type="text" id="editData" name="universal" />
             </label>
             <div className="button">
-              <button type="submit" className="edit">Сохранить</button>
+              <button type="submit" className="edit" value={'/account/login'}>Сохранить</button>
               <button type="submit" className="cancel">Назад</button>
             </div>
           </form>
-            <div className='account'>
-            <div className='login'>
-                <h3>Имя: {login}</h3>
+            <div className='loginDiv'>
+              <h3 className='name'>Имя: </h3>
+                <h3 className='login'>{login}</h3>
                 <button className='editLogin' type="submit">Изменить</button>
             </div>
-            <div className='email'>
-                <h3>Почта: {user.email}</h3>
+            <div className='emailDiv'>
+              <h3 className='pochta'>Почта: </h3>
+                <h3 className='email'>{user.email}</h3>
                 <button className='editEmail' type="submit">Изменить</button>
             </div>
-            <form className="formEdit">
+            <form className="formEditePassword">
             <h3>Изменить пароль</h3>
             <label htmlFor="oldPassword">
               <input type="text" id="oldPassword" name="old" placeholder="Текущий пароль" />

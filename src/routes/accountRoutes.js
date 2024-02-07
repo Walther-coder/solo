@@ -37,4 +37,49 @@ accountRoutes.put('/', async (req, res) => {
     }
 })
 
+accountRoutes.put('/login', async (req, res) => {
+    const {login} = req.session;
+    const {universal} = req.body;
+    console.log(login, universal, '=======>')
+    try {
+        const user = await User.findOne({where: {login}});
+        console.log(user, '<====>>>>')
+        if(user){
+            console.log(user, '<====')
+            user.login = universal;
+            await user.save();
+            res.json({
+                msg: 'Логин удачно изменен. Войдите заново.',
+                action: "loginChanged"
+        })
+        } else{
+            res.json({err: 'Ошибка! Попробуйте еще раз'})
+        }
+    } catch (error) {
+        console.log(error, 'ОШИБКА В РУЧКЕ ИЗМЕНЕНИЯ ЛОГИНА')
+    }
+})
+
+accountRoutes.put('/email', async (req, res) => {
+    const {login} = req.session;
+    const {universal} = req.body;
+    console.log('universal=====>', universal)
+    try {
+        const user = await User.findOne({where: {login}});
+        if(user){
+            user.email = universal;
+            await user.save();
+            res.json({
+                user,
+                msg: "Email успешно изменен",
+                action: "emailChanged"
+            })
+        } else{
+            res.json({err: 'Ошибка! Попробуйте еще раз'})
+        }
+    } catch (error) {
+        console.log(error, 'ОШИБКА В РУЧКЕ ИЗМЕНЕНИЯ ЛОГИНА')
+    }
+})
+
 module.exports = accountRoutes;

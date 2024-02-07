@@ -23,6 +23,7 @@ const logRoutes = require('./routes/loginRoutes');
 const favoritesRoutes = require('./routes/favoritesRoutes');
 const quotesApiRoutes = require('./routes/quotesApiRoutes');
 const accountRoutes = require('./routes/accountRoutes');
+const entryRoutes = require('./routes/entryRoutes');
 
 // * Конфиг для куки в виде файла сессий
 const sessionConfig = {
@@ -45,6 +46,7 @@ app.use(express.static(path.join(process.cwd(), 'public')));
 // * Подключи сессии как мидл
 app.use(session(sessionConfig));
 
+app.use('/entry', checkUser, entryRoutes);
 app.use('/account', checkUser, accountRoutes);
 app.use('/quotesApi', checkUser, quotesApiRoutes)
 app.use('/quote', checkUser, favoritesRoutes);

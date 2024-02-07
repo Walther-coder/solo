@@ -11,7 +11,7 @@ module.exports = function Favorites({login, quote}) {
             <label htmlFor="quote">
               <input type="text" id="quoteCreateInput" name="quote" placeholder="Введите цитату..." />
             </label>
-            <button type="submit" className="addCeremony">Сохранить</button>
+            <button type="submit" className="addQuote">Сохранить</button>
           </form>
   
           <form className="formEdit" style={{ display: 'none' }}>

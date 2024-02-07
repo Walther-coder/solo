@@ -5,20 +5,10 @@ module.exports = function Layout({ children, login }) {
     <html lang="en">
       <head>
         <meta charSet="UTF-8" />
-        <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        {/* <link
-          type="image/x-icon"
-          href="/assets/favicon.ico"
-          rel="shortcut icon"
-        />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
-        /> */}
-        {/* <link rel="stylesheet" href="/css/style.css" /> */}
+        {/* <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" /> */}
+       
+        <link rel="stylesheet" href="/css/style.css" />
         <title>Solo prodgect</title>
       </head>
       <body>
@@ -38,6 +28,9 @@ module.exports = function Layout({ children, login }) {
               </a>
               <a className="home" href="/quotesApi">
                 ВКонтактовские цитаты
+              </a>
+              <a className='home' href='/entry'>
+                Записи
               </a>
               <div>
                 <a href="/account">

@@ -17,8 +17,6 @@ if (containerFavorites !== null) {
 }
 
 formEdit.addEventListener("click", (event) => {
-  const containerFavoritess = document.querySelector(".containerFavorites");
-  // console.log('containerFavorites', containerFavorites)
   if (event.target.classList.contains("cancel")) {
     formCreate.style.display = "block";
     formEdit.style.display = "none";
