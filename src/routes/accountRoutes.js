@@ -18,10 +18,11 @@ accountRoutes.get('/', async (req, res) => {
 
 accountRoutes.put('/', async (req, res) => {
     const { login } = req.session;
+    const {userId} = req.session;
     const { oldP, newP } = req.body;
     try {
         const user = await User.findOne({ where: { login } });
-        if(user) {
+        if(user.id === userId) {
             const checkPass = await bcrypt.compare(oldP, user.password);
             if(checkPass) {
                 const hash = await bcrypt.hash(newP, 10);
@@ -38,13 +39,13 @@ accountRoutes.put('/', async (req, res) => {
 })
 
 accountRoutes.put('/login', async (req, res) => {
-    const {login} = req.session;
+    const {login, userId} = req.session;
     const {universal} = req.body;
     console.log(login, universal, '=======>')
     try {
         const user = await User.findOne({where: {login}});
         console.log(user, '<====>>>>')
-        if(user){
+        if(user.id === userId){
             console.log(user, '<====')
             user.login = universal;
             await user.save();
@@ -61,12 +62,12 @@ accountRoutes.put('/login', async (req, res) => {
 })
 
 accountRoutes.put('/email', async (req, res) => {
-    const {login} = req.session;
+    const {login, userId} = req.session;
     const {universal} = req.body;
     console.log('universal=====>', universal)
     try {
         const user = await User.findOne({where: {login}});
-        if(user){
+        if(user.id === userId){
             user.email = universal;
             await user.save();
             res.json({

@@ -25,6 +25,7 @@ const quotesApiRoutes = require('./routes/quotesApiRoutes');
 const accountRoutes = require('./routes/accountRoutes');
 const entryRoutes = require('./routes/entryRoutes');
 
+
 // * Конфиг для куки в виде файла сессий
 const sessionConfig = {
   name: 'valeraCookie',

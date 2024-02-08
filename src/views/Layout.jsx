@@ -5,9 +5,7 @@ module.exports = function Layout({ children, login }) {
     <html lang="en">
       <head>
         <meta charSet="UTF-8" />
-        {/* <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" /> */}
-       
+
         <link rel="stylesheet" href="/css/style.css" />
         <title>Solo prodgect</title>
       </head>
@@ -23,23 +21,22 @@ module.exports = function Layout({ children, login }) {
 
           {login ? (
             <div className="userMenu">
-              <a className="home" href="/quote/favorites">
-                Избранное
-              </a>
               <a className="home" href="/quotesApi">
                 ВКонтактовские цитаты
+              </a>
+              <a className="home" href="/quote/favorites">
+                Избранное
               </a>
               <a className='home' href='/entry'>
                 Записи
               </a>
               <div>
-                <a href="/account">
-                  Hi,
-                  {login}
+                <a className='exit' href="/account">
+                  Привет, {login}   
                 </a>
               </div>
               <div>
-                <a href="/logout">Выйти</a>
+                <a className='exit' href="/logout">Выйти</a>
               </div>
             </div>
           ) : (
@@ -50,8 +47,8 @@ module.exports = function Layout({ children, login }) {
                 </a>
               </div>
               <div className="nav-item">
-                <a className="nav-link" href="/register">
-                  За регатца
+                <a className="nav-link nav-link-register" href="/register">
+                   Регнутца
                 </a>
               </div>
             </>
@@ -59,7 +56,6 @@ module.exports = function Layout({ children, login }) {
 
         </nav>
         {children}
-        {/* <script defer src="/js/index.js" /> */}
       </body>
     </html>
   );

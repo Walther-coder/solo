@@ -29,10 +29,15 @@ quotesRoutes.delete('/favorites/:id', async (req, res) => {
     const { id } = req.params;
     const { userId } = req.session;
     try {
-        await Quote.destroy({ where: { id } });
-        const newQuotesAll = await Quote.findAll({ where: { user_id: userId } });
-        const result = newQuotesAll.map((el) => el.get({ plain: true }));
-        res.json(result)
+        const queryQuoty = await Quote.findByPk(id);
+        if(queryQuoty.user_id === userId){
+            await Quote.destroy({ where: { id } });
+            const newQuotesAll = await Quote.findAll({ where: { user_id: userId } });
+            const result = newQuotesAll.map((el) => el.get({ plain: true }));
+            res.json(result)
+        }else{
+            console.log('Ошибка в правах удаления')
+        }
     } catch (error) {
         console.log(error, 'ОШИБКА v РУЧКЕ УДАЛЕНИЯ');
         res.status(400)
@@ -42,13 +47,16 @@ quotesRoutes.delete('/favorites/:id', async (req, res) => {
 quotesRoutes.put('/favorites/:id', async (req, res) => {
     const { id } = req.params;
     const { quote: body } = req.body;
-    console.log('===>', body, id)
+    const { userId } = req.session;
     try {
         const quryQuote = await Quote.findOne({ where: { id } });
-    
-        quryQuote.body = body;
-        await quryQuote.save();
-        res.json(quryQuote);
+        if(quryQuote.user_id === userId){
+            quryQuote.body = body;
+            await quryQuote.save();
+            res.json(quryQuote);
+        }else{
+            console.log('Ошибка в правах изменения')
+        }
     } catch (error) {
         console.log(error, 'ОШИБКА В РУЧКЕ РЕДАКТИРОВАНИЯ');
         res.status(500);

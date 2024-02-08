@@ -6,3 +6,86 @@
     color: gray; 
     text-decoration: line-through; 
   }
+
+  .navbar {
+    background-color: #0b71a8; /* Темно-синий цвет фона */
+    color: white; /* Белый цвет текста */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 20px; /* Внутренние отступы */
+  }
+  
+  .navbarMenu {
+    display: flex;
+  }
+  
+.navbarMenu a,
+.userMenu a,
+.nav-item a {
+  color: white; /* Белый цвет текста ссылок */
+  text-decoration: none;
+  margin-right: 20px; /* Отступы между ссылками */
+}
+.navbar {
+  background-color: #0b71a8;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.navbarMenu {
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+}
+
+.navbarMenu a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.userMenu {
+  display: flex;
+}
+
+.userMenu a {
+  color: white;
+  text-decoration: none;
+  margin-left: 10px;
+}
+
+body {
+  background-color: #d7ca96; /* Цвет желтой бумаги */
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+button {
+  padding: 10px -1px;
+  font-size: 16px;
+  background-color: #6d0219; /* Темно-синий цвет */
+  color: white;
+  border: none;
+  border-radius: 97px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #095c84; /* Темно-синий цвет при наведении */
+}
+
+
+
+   
+  
+
+    

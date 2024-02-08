@@ -22,14 +22,19 @@ entryRoutes.get('/', async (req, res) =>  {
 
 entryRoutes.put('/:id', async (req, res) => {
     const {id} = req.params;
+    const {userId} = req.session;
     const {text: Ntext, date: Ndate} = req.body;
-    // console.log('=====>', Ntext, Ndate, id)
     try {
-        const entry = await Entry.findByPk(id);
-        entry.text = Ntext;
-        entry.date = Ndate;
-        await entry.save();    
-        res.json(entry);
+       const queryEntry = await Entry.findByPk(id);
+        if(queryEntry.user_id === userId){
+            const entry = await Entry.findByPk(id);
+            entry.text = Ntext;
+            entry.date = Ndate;
+            await entry.save();    
+            res.json(entry);
+        }else{
+            console.log('Ошибка доступа')
+        }
     } catch (error) {
         console.log(error, 'ОШИБКА В РУЧКЕ РЕДАКТИРОВАНИЯ ЗАПИСИ');
         res.status(500);
@@ -37,12 +42,17 @@ entryRoutes.put('/:id', async (req, res) => {
 })
 
 entryRoutes.patch('/:id', async (req, res) => {
-    const {login} = req.session;
     const {id} = req.params;
+    const {userId} = req.session;
     try {
-        const entry = await Entry.findByPk(id);
-        const newStatusEntry = await entry.update({status: !entry.status});
-        res.json(newStatusEntry); 
+        const queryEntry2 = await Entry.findByPk(id);
+        if(queryEntry2.user_id === userId){
+            const entry = await Entry.findByPk(id);
+            const newStatusEntry = await entry.update({status: !entry.status});
+            res.json(newStatusEntry); 
+        }else{
+            console.log('Ошибка доступа')
+        }
     } catch (error) {
         console.log(error, 'ОШИБКА В РУЧКЕ ИЗМЕНЕНИЯ СТАТУСА');
         res.status(500);
@@ -66,10 +76,9 @@ entryRoutes.post('/', async (req, res) => {
 entryRoutes.delete('/:id', async (req, res) => {
     const {id} = req.params;
     const {userId} = req.session;
-    const {login} = req.session;
     try {
         const reqEntry = await Entry.findByPk(id);
-        console.log('=======>user_id',reqEntry.user_id)
+
         if(reqEntry.user_id === userId){
             await Entry.destroy({where: {id}});
             const newEntriesAll = await Entry.findAll({where: {user_id: userId}});

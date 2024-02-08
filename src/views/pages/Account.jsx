@@ -8,6 +8,7 @@ module.exports = function Account({login, user}) {
 
             <div className='account'>
               <h2>Личный кабинет</h2>
+              <div className='message'></div>
            <form className="dataformEdit" style={{ display: 'none' }}>
             <h1>Изменить</h1>
             <label htmlFor="editData">
@@ -40,7 +41,6 @@ module.exports = function Account({login, user}) {
               <button type="submit" className="editPassword">Изменить</button>
             </div>
           </form>
-          <div className='message'></div>
 
             </div>
 

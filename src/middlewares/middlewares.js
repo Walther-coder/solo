@@ -14,4 +14,6 @@ const secureRoute = (req, res, next) => {
    }
  };
 
+  
+
  module.exports = { checkUser, secureRoute };
