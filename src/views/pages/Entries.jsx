@@ -5,6 +5,7 @@ module.exports = function Entry({login, entries}){
     return (
         <Layout login={login}>
             <script defer src="/js/entryFetch.js" />
+            <link rel="stylesheet" href="/css/style.css" />
             <div className='entry'>
             <form id="formCreate" className="createEntry">
             <h1 className="create">Новая запись</h1>
@@ -33,7 +34,8 @@ module.exports = function Entry({login, entries}){
           </form>
           <div className='entryContainer'>
                 <h3>Записи</h3>
-                <ul>
+                <div className='msg'></div>
+                <ul className='enryUl'>
                     {entries && entries.map((el) => (
                         <li id={`entry${el.id}`} key={el.id} className={el.status ? 'done' : 'not-done'}>
                           <p className='entryElvalue'>{el.text}</p>
@@ -42,8 +44,8 @@ module.exports = function Entry({login, entries}){
                                  year: 'numeric', month: '2-digit', day: '2-digit', hour: 'numeric', minute: 'numeric', hour12: true,
                                     })}</p>
                           <button id={el.id} className='change' text="Change Status" type="submit">Изменить статус</button>
-                          <button id={el.id} className='update-btn'>Отредактировать</button>
-                          <button id={el.id} className='delete-btn'>Удалить </button>  
+                          <button id={el.id} className='update-btn' type="submit" >Отредактировать</button>
+                          <button id={el.id} className='delete-btn' type="submit" >Удалить </button>  
                         </li>
                     ) )}
                 </ul>              

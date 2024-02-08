@@ -71,7 +71,7 @@ accountRoutes.put('/email', async (req, res) => {
             await user.save();
             res.json({
                 user,
-                msg: "Email успешно изменен",
+                msg: "Email успешно изменен.",
                 action: "emailChanged"
             })
         } else{

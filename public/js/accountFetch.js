@@ -42,27 +42,26 @@ if(divAccount !== null) {
                    
 
                     if(result.action === "loginChanged") {
-                        console.log("resultLogin",result)
                         message.innerText = result.msg;
                         message.style.color = 'green';
+                        // console.log("resultLogin",result)
                         setTimeout(() => {
                             window.location.href = '/logout';   
                         }, 3000);
                     } 
                     
                     else if(result.action === "emailChanged"){
-                        console.log(result, 'resultEmail======>')
+                        message.innerText = result.msg;
+                        message.style.color = 'green';
                         dataformEdite.reset();
                         dataformEdite.style.display = 'none';
                         const displaH3 = document.querySelector('.email');
-                        
-                        displaH3.innerText = result.user.email;
-                        
-                    } 
+                        displaH3.innerText = result.user.email;  
+                    }
                     else  {
                         message.innerText = result.err;
                         message.style.color = 'red';
-                        console.log('oshibka')
+                        // console.log('oshibka')
                     }
         
                     

@@ -1,0 +1,8 @@
+.not-done {
+    color: black; 
+  }
+  
+  .done {
+    color: gray; 
+    text-decoration: line-through; 
+  }
