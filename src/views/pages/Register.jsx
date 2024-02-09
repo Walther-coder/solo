@@ -5,7 +5,8 @@ const Layout = require('../Layout');
 module.exports = function Login() {
   return (
     <Layout>
-      
+       <script defer src="/js/registrationFetch.js" />
+       <link rel="stylesheet" href="/css/login.css" />
       <div className="registerPage">
         <form action="/register" method="POST" id="regForm" className="formContainer">
           <input
@@ -35,7 +36,6 @@ module.exports = function Login() {
         </form>
         <div id="message"></div>
       </div>
-      <script defer src="/js/registrationFetch.js" />
     </Layout>
   );
 };

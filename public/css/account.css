@@ -1,0 +1,123 @@
+/* Стили для контейнера страницы "Аккаунт" */
+.account {
+    background-image: url('https://alna.ru/up/services_img/233413/4582421153.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Стили для текста "Личный кабинет" */
+.account h1 {
+    color: #9aabb0; /* Цвет текста как у кнопки */
+  }
+  
+  
+  /* Стили для формы редактирования данных */
+  .dataformEdit {
+    text-align: center;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .dataformEdit h1 {
+    color: white;
+  }
+  
+  .dataformEdit input[type="text"] {
+    width: 70%;
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  .dataformEdit .button {
+    margin-top: 10px;
+  }
+  
+  .dataformEdit button {
+    padding: 10px 20px;
+    background-color: #6d0219; /* Цвет кнопки */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  /* Стили для раздела с логином */
+  .loginDiv {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .loginDiv h2 {
+    color: rgb(2, 2, 171);
+  }
+  
+  .loginDiv .editLogin {
+    margin-top: 10px;
+    padding: 5px 10px;
+    background-color: #6d0219; /* Цвет кнопки */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  /* Стили для раздела с почтой */
+  .emailDiv {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .emailDiv h2 {
+    color: rgb(5, 15, 166);
+  }
+  
+  .emailDiv .editEmail {
+    margin-top: 10px;
+    padding: 5px 10px;
+    background-color: #6d0219; /* Цвет кнопки */
+    color: rgb(240, 240, 240);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  /* Стили для формы смены пароля */
+  .formEditePassword {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .formEditePassword h2 {
+    color: rgb(5, 0, 156);
+  }
+  
+  .formEditePassword input[type="text"] {
+    width: 70%;
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  .formEditePassword .button {
+    margin-top: 10px;
+  }
+  
+  .formEditePassword button {
+    padding: 10px 20px;
+    background-color: #6d0219; /* Цвет кнопки */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  

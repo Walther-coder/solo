@@ -5,6 +5,7 @@ const Layout = require('../Layout');
 module.exports = function Login() {
   return (
     <Layout>
+      <link rel="stylesheet" href="/css/login.css" />
       <script defer src="/js/loginFetch.js" />
       <div className="loginPage">
         <form action="/login" method="POST" id="loginForm" className="formContainer">

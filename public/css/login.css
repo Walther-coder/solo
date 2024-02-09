@@ -1,0 +1,46 @@
+.registerPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 3cm; /* Отступ от навбара */
+  }
+
+  .loginPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 3cm; /* Отступ от навбара */
+  }
+  
+  .formContainer {
+    width: 300px; /* Ширина контейнера для формы */
+  }
+  
+  .loginInput,
+  .emailInput,
+  .passwordInput {
+    width: 100%; /* Растягиваем инпут по всей ширине контейнера */
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px; /* Отступ между инпутами */
+  }
+  
+  button {
+    width: 100%;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #6d0219;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 10px; /* Отступ между кнопкой и последним инпутом */
+  }
+  
+  button:hover {
+    background-color: #095c84;
+  }
+  
+  
+  

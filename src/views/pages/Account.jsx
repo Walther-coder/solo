@@ -5,9 +5,9 @@ module.exports = function Account({login, user}) {
     return (
         <Layout login={login}>
            <script defer src="/js/accountFetch.js" />
-
+           <link rel="stylesheet" href="/css/account.css" />
             <div className='account'>
-              <h2>Личный кабинет</h2>
+              <h1>Личный кабинет</h1>
               <div className='message'></div>
            <form className="dataformEdit" style={{ display: 'none' }}>
             <h1>Изменить</h1>
@@ -20,17 +20,17 @@ module.exports = function Account({login, user}) {
             </div>
           </form>
             <div className='loginDiv'>
-              <h3 className='name'>Имя: </h3>
-                <h3 className='login'>{login}</h3>
+              <h2 className='name'>Имя: </h2>
+                <h2 className='login'>{login}</h2>
                 <button className='editLogin' type="submit">Изменить</button>
             </div>
             <div className='emailDiv'>
-              <h3 className='pochta'>Почта: </h3>
-                <h3 className='email'>{user.email}</h3>
+              <h2 className='pochta'>Почта: </h2>
+                <h2 className='email'>{user.email}</h2>
                 <button className='editEmail' type="submit">Изменить</button>
             </div>
             <form className="formEditePassword">
-            <h3>Изменить пароль</h3>
+            <h2>Изменить пароль</h2>
             <label htmlFor="oldPassword">
               <input type="text" id="oldPassword" name="old" placeholder="Текущий пароль" />
             </label>

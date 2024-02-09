@@ -1,0 +1,107 @@
+/* Стили для контейнера страницы "Избранное" */
+.containerQuotes {
+    background-image: url('https://top-fon.com/uploads/posts/2023-01/1674733746_top-fon-com-p-fon-dlya-prezentatsii-pero-i-chernilnitsa-28.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
+    height: 100vh; /* Задаем высоту контейнера на всю высоту экрана */
+  }
+  
+  /* Стили для формы создания цитаты */
+  .createQuote {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .createQuote h1 {
+    color: white;
+  }
+  
+  .createQuote input[type="text"] {
+    width: 70%;
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  .createQuote button {
+    padding: 10px 20px;
+    margin-top: 10px;
+    background-color: #6d0219;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  /* Стили для списка цитат */
+  .containerFavorites {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .quoteCard {
+    background-color: rgba(150, 150, 150, 0.5); /* Чуть темнее фон карточек */
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+    text-align: center;
+  }
+  
+  .quoteCard h3 {
+    color: #6d0219;
+  }
+  
+  .quoteCard button {
+    margin-top: 10px;
+    padding: 5px 10px;
+    background-color: #6d0219;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  /* Стили для формы редактирования цитаты */
+  .formEdit {
+    display: none; /* По умолчанию форма редактирования скрыта */
+    position: absolute; /* Размещаем форму на том же месте, что и форма создания */
+    top: 50%; /* Размещаем по вертикали на половину высоты контейнера */
+    left: 50%; /* Размещаем по горизонтали на половину ширины контейнера */
+    transform: translate(-50%, -50%); /* Центрируем форму */
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.7); /* Цвет фона формы */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Добавляем тень */
+  }
+  
+  .formEdit h1 {
+    color: white;
+  }
+  
+  .formEdit input[type="text"] {
+    width: 70%;
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  .formEdit button {
+    padding: 10px 20px;
+    margin-top: 10px;
+    background-color: #6d0219;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  
+  
+  
+  
+  

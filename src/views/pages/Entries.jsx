@@ -5,7 +5,7 @@ module.exports = function Entry({login, entries}){
     return (
         <Layout login={login}>
             <script defer src="/js/entryFetch.js" />
-            <link rel="stylesheet" href="/css/style.css" />
+            <link rel="stylesheet" href="/css/entry.css" />
             <div className='entry'>
             <form id="formCreate" className="createEntry">
             <h1 className="create">Новая запись</h1>
@@ -21,7 +21,6 @@ module.exports = function Entry({login, entries}){
           <form className="formEdit" style={{ display: 'none' }}>
             <h1>Отредактировать</h1>
             <label htmlFor="editText">
-            Запись:
               <input type="text" id="textEdit" name="text" />
             </label>
             <label htmlFor="editDate">
@@ -33,7 +32,6 @@ module.exports = function Entry({login, entries}){
             </div>
           </form>
           <div className='entryContainer'>
-                <h3>Записи</h3>
                 <div className='msg'></div>
                 <ul className='enryUl'>
                     {entries && entries.map((el) => (

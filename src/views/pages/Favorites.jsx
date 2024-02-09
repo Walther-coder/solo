@@ -4,6 +4,7 @@ const Layout = require('../Layout');
 module.exports = function Favorites({login, quote}) {
     return (
         <Layout login={login}>
+           <link rel="stylesheet" href="/css/favorite.css" />
         <script defer src="/js/favoritesFetch.js" />
         <div className="containerQuotes">
           <form id="formCreate" className="createQuote">

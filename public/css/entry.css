@@ -1,0 +1,121 @@
+/* Стили для контейнера страницы "Записи" */
+.entry {
+    background-image: url('http://gosurburo08.ru/images/long_form_2.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  
+  /* Стили для формы создания записи */
+  .createEntry {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .createEntry h1 {
+    color: white;
+  }
+  
+  .createEntry input[type="text"] {
+    width: 70%;
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  .createEntry input[type="datetime-local"] {
+    width: 70%;
+    padding: 8px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  .createEntry button {
+    padding: 10px 20px;
+    margin-top: 10px;
+    background-color: #6d0219;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  /* Стили для списка записей */
+  .entryContainer {
+    color: white;
+  }
+  
+  .entryContainer h3 {
+    color: white;
+  }
+  
+  .entryUl {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .entryUl li {
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .entryUl li .entryElvalue {
+    margin: 0;
+    font-size: 16px;
+  }
+  
+  .entryUl li .entryElDate {
+    margin-top: 10px;
+  }
+  
+  .entryUl li button {
+    margin-top: 10px;
+    padding: 5px 10px;
+    background-color: #6d0219;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  /* Стили для формы редактирования записи */
+.formEdit {
+    text-align: center;
+    display: none; /* Изначально скрыта */
+  }
+  
+  .formEdit h1 {
+    color: white;
+  }
+  
+  .formEdit input[type="text"],
+  .formEdit input[type="datetime-local"] {
+    width: 70%;
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  .formEdit button {
+    padding: 10px 20px;
+    margin-top: 10px;
+    background-color: #6d0219;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  
+  
